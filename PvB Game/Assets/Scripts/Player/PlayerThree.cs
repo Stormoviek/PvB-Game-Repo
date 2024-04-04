@@ -9,19 +9,17 @@ public class PlayerThree : PlayerMovement
 	{
 		playerIndex = 2;
 	}
-
-	// Update is called once per frame
-	void Update()
-	{
-		
-	}
 	public override void Movement()
 	{
 		base.Movement();
 		float speed = Input.GetAxis("_PlayerThree") * force * 15f;
 
-		Vector3 movement = new Vector3(-speed, 0, 0);
+		Vector3 movement = new(-speed, 0, 0);
 
-		rb.AddForce(movement * speed * Time.deltaTime);
+		rb.AddForce(speed * Time.deltaTime * movement);
+	}
+	public override void GatheringMovement()
+	{
+		base.GatheringMovement();
 	}
 }

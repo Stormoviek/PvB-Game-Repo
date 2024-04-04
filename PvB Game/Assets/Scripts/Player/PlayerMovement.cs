@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
 	public float force = 2;
 	public int playerIndex;
 	public Rigidbody rb;
+	public float horizontal;
+	public float vertical;
+	public Vector3 playerVelocity;
 	//string[] players = { "PlayerOne", "PlayerTwo", "PlayerThree", "PlayerFour" };
 	// Start is called before the first frame update
 	void Start()
@@ -18,23 +21,26 @@ public class PlayerMovement : MonoBehaviour
 	void FixedUpdate()
 	{
 		Movement();
+		GatheringMovement();
 	}
 
 	public virtual void Movement()
 	{
 		
 	}
-	public void GatheringMovement()
+	public virtual void GatheringMovement()
 	{
 		if (playerIndex == 0 || playerIndex == 2)
 		{
-			float horizontal = Input.GetAxis("HorizontalOne");
-			float vertical = Input.GetAxis("VerticalOne");
+			horizontal = Input.GetAxis("HorizontalOne");
+			vertical = Input.GetAxis("VerticalOne");
 		}
 		if (playerIndex == 1 || playerIndex == 3)
 		{
-			float horizontal = Input.GetAxis("HorizontalTwo");
-			float vertical = Input.GetAxis("VerticalTwo");
+			horizontal = Input.GetAxis("HorizontalTwo");
+			vertical = Input.GetAxis("VerticalTwo");
 		}
+
+
 	}
 }
