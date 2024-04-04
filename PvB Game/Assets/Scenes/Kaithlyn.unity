@@ -607,6 +607,7 @@ GameObject:
   - component: {fileID: 879020315}
   - component: {fileID: 879020316}
   - component: {fileID: 879020317}
+  - component: {fileID: 879020318}
   m_Layer: 0
   m_Name: PlayerThree
   m_TagString: Untagged
@@ -644,7 +645,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 2
+  jumpForce: 5
+  playerIndex: 0
   rb: {fileID: 879020317}
+  horizontal: 0
+  vertical: 0
+  playerVelocity: {x: 0, y: 0, z: 0}
+  playerToThrow: {fileID: 943797158}
 --- !u!54 &879020317
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -672,6 +679,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &879020318
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879020314}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.75
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &887471967
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,6 +805,7 @@ GameObject:
   - component: {fileID: 943797159}
   - component: {fileID: 943797160}
   - component: {fileID: 943797161}
+  - component: {fileID: 943797162}
   m_Layer: 0
   m_Name: PlayerOne
   m_TagString: Untagged
@@ -812,7 +843,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 2
+  jumpForce: 5
+  playerIndex: 0
   rb: {fileID: 943797161}
+  horizontal: 0
+  vertical: 0
+  playerVelocity: {x: 0, y: 0, z: 0}
+  playerToThrow: {fileID: 879020314}
 --- !u!54 &943797161
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -840,6 +877,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &943797162
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943797158}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.75
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1317551165
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +911,7 @@ GameObject:
   - component: {fileID: 1317551166}
   - component: {fileID: 1317551167}
   - component: {fileID: 1317551168}
+  - component: {fileID: 1317551169}
   m_Layer: 0
   m_Name: PlayerFour
   m_TagString: Untagged
@@ -888,7 +949,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 2
+  jumpForce: 5
+  playerIndex: 0
   rb: {fileID: 1317551168}
+  horizontal: 0
+  vertical: 0
+  playerVelocity: {x: 0, y: 0, z: 0}
+  playerToThrow: {fileID: 1905592305}
 --- !u!54 &1317551168
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -916,6 +983,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &1317551169
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317551165}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.75
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1352583687
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +1018,7 @@ GameObject:
   - component: {fileID: 1352583690}
   - component: {fileID: 1352583689}
   - component: {fileID: 1352583688}
+  - component: {fileID: 1352583692}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1022,6 +1113,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1352583692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352583687}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1543498989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1330,7 @@ GameObject:
   - component: {fileID: 1905592306}
   - component: {fileID: 1905592307}
   - component: {fileID: 1905592308}
+  - component: {fileID: 1905592309}
   m_Layer: 0
   m_Name: PlayerTwo
   m_TagString: Untagged
@@ -1255,7 +1368,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 2
+  jumpForce: 5
+  playerIndex: 0
   rb: {fileID: 1905592308}
+  horizontal: 0
+  vertical: 0
+  playerVelocity: {x: 0, y: 0, z: 0}
+  playerToThrow: {fileID: 1317551165}
 --- !u!54 &1905592308
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1283,6 +1402,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &1905592309
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905592305}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.75
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1989406094
 GameObject:
   m_ObjectHideFlags: 0
