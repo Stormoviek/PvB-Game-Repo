@@ -7,7 +7,7 @@ public class Card : MonoBehaviour
 {
     private bool isPulled = false;
 
-    void OnMouseDown()
+    public void CardSceneSwitch()
     {
         if (!isPulled)
         {
