@@ -5,16 +5,10 @@ using TMPro;
 
 public class DiceNumberTextScript : MonoBehaviour
 {
-    TextMeshProUGUI text;
-    public static int diceNumber;
+    public static TextMeshProUGUI text;
 
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-    }
-
-    void Update()
-    {
-        text.text = diceNumber.ToString();
     }
 }

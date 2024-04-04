@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class DiceScript : MonoBehaviour
 {
+    public bool rollsDone = false;
 
     static Rigidbody rb;
     public static Vector3 diceVelocity;
@@ -22,7 +23,7 @@ public class DiceScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            DiceNumberTextScript.diceNumber = 0;
+            rollsDone = false;
             float dirX = Random.Range(0, 500);
             float dirY = Random.Range(0, 500);
             float dirZ = Random.Range(0, 500);
