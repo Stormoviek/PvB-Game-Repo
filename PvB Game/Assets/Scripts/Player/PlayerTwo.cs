@@ -7,7 +7,7 @@ public class PlayerTwo : PlayerMovement
 	// Start is called before the first frame update
 	void Start()
 	{
-		
+		playerIndex = 1;
 	}
 
 	// Update is called once per frame
