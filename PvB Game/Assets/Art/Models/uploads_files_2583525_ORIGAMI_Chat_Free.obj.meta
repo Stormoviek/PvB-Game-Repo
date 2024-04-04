@@ -3,7 +3,12 @@ guid: 31134a64e90cb31449948bcd321ca3af
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ORIGAMI_ChatMat
+    second: {fileID: 2100000, guid: d472eadc00807584690fa261da4f22d1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

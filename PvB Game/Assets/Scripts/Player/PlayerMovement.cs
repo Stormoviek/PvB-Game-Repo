@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		Movement();
 		GatheringMovement();
+		ThrowingGame();
 	}
 
 	public virtual void Movement()
@@ -83,10 +84,19 @@ public class PlayerMovement : MonoBehaviour
 	}
 	public void ThrowingGame()
 	{
-		
+		if (Input.GetKey(KeyCode.F))
+		{
+			Debug.Log("Throwing a player!!");
+			ThrowPlayer(playerToThrow);
+		}
+		if (Input.GetKey(KeyCode.J))
+		{
+			Debug.Log("Throwing a player!!!!!!");
+			ThrowPlayer(playerToThrow);
+		}
 	}
-	public void ThrowPlayer()
+	public void ThrowPlayer(GameObject throwingPlayer)
 	{
-		
+		Debug.Log("The player has been thrown!!");
 	}
 }
