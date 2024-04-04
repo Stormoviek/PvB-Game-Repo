@@ -17,6 +17,11 @@ public class PlayerFour : PlayerMovement
 	}
 	public override void Movement()
 	{
-		float speed = Input.GetAxis("_PlayerFour") * force;
+		base.Movement();
+		float speed = Input.GetAxis("_PlayerFour") * force * 15f;
+
+		Vector3 movement = new Vector3(-speed, 0, 0);
+
+		rb.AddForce(movement * speed * Time.deltaTime);
 	}
 }
