@@ -157,7 +157,7 @@ MonoBehaviour:
   - {fileID: 1861652584}
   - {fileID: 1755347444}
   - {fileID: 110760965}
-  selectedCharacter: 0
+  selectedCharacters: 00000000000000000000000000000000
 --- !u!4 &68911279
 Transform:
   m_ObjectHideFlags: 0
