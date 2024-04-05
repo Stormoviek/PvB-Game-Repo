@@ -99,4 +99,8 @@ public class PlayerMovement : MonoBehaviour
 	{
 		Debug.Log("The player has been thrown!!");
 	}
+	public void OnTriggerEnter(Collider other)
+	{
+		other.gameObject.CompareTag("FinishLine");
+	}
 }
