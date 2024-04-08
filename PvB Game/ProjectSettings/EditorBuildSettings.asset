@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Storm/Main Menu.unity
+    guid: 43158503be2cfab478187aecdd771559
+  - enabled: 1
     path: Assets/Scenes/Storm/Test/Test.unity
     guid: 347a6ccb53883374088cb1ef7be56ab9
   - enabled: 1
