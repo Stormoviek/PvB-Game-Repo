@@ -31,6 +31,7 @@ public class Timer : MonoBehaviour
 				Debug.Log("Time has ran out!");
 				timeRemaining = 0;
 				timerIsRunning = false;
+				DisplayTime(timeRemaining);
 			}
 		}
 	}
