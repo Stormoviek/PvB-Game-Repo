@@ -10,15 +10,11 @@ public class Timer : MonoBehaviour
 
 	public float timeRemaining = 60f;
 	bool timerIsRunning = false;
-
-	//public TextMeshProUGUI timeOverLabel;
 	public GameObject timeOverPanel;
 	// Start is called before the first frame update
 	void Start()
 	{
-		//StartCoroutine(UseTimer(60));
 		timerIsRunning = true;
-		//timeOverLabel = GetComponent<TextMeshProUGUI>();
 	}
 	private void Update()
 	{
@@ -48,15 +44,5 @@ public class Timer : MonoBehaviour
 		float seconds = Mathf.FloorToInt(timeRemaining % 60);
 
 		timerLabel.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-	}
-	IEnumerator UseTimer(float timerInSeconds)
-	{
-		float counter = 0;
-		while (counter < timerInSeconds)
-		{
-			counter += Time.deltaTime;
-			timerLabel.text = Mathf.Round(counter).ToString();
-			yield return null;
-		}
 	}
 }
