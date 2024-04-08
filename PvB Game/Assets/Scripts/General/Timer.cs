@@ -10,12 +10,15 @@ public class Timer : MonoBehaviour
 
 	public float timeRemaining = 60f;
 	bool timerIsRunning = false;
-	
+
+	//public TextMeshProUGUI timeOverLabel;
+	public GameObject timeOverPanel;
 	// Start is called before the first frame update
 	void Start()
 	{
 		//StartCoroutine(UseTimer(60));
 		timerIsRunning = true;
+		//timeOverLabel = GetComponent<TextMeshProUGUI>();
 	}
 	private void Update()
 	{
@@ -31,6 +34,8 @@ public class Timer : MonoBehaviour
 				Debug.Log("Time has ran out!");
 				timeRemaining = 0;
 				timerIsRunning = false;
+				timeOverPanel.SetActive(true);
+				//timeOverLabel.enabled = true;
 				DisplayTime(timeRemaining);
 			}
 		}
