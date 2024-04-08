@@ -22,4 +22,12 @@ public class PlayerThree : PlayerMovement
 	{
 		base.GatheringMovement();
 	}
+	public override void ThrowingGame()
+	{
+		base.ThrowingGame();
+		if (Input.GetKeyDown(KeyCode.F))
+		{
+			ThrowPlayer(objectToThrow);
+		}
+	}
 }
