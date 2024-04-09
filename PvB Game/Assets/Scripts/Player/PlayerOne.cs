@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
 public class PlayerOne : PlayerMovement
 {
+	public TextMeshProUGUI distanceThrown;
+	public static bool objectThrown = false;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -29,7 +32,7 @@ public class PlayerOne : PlayerMovement
 		base.ThrowingGame();
 		if (Input.GetKeyDown(KeyCode.F))
 		{
-			ThrowPlayer(objectToThrow);
+			ThrowPlayer(objectToThrow, distanceThrown, objectThrown);
 		}
 	}
 }

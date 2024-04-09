@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,11 +15,15 @@ public class PlayerMovement : MonoBehaviour
 
 	public GameObject objectToThrow;
 	public float throwForce = 500f;
-	bool objectThrown = false;
+	//bool objectThrown = false;
+
+	GameRounds gameRounds;
+	
 	// Start is called before the first frame update
 	void Start()
 	{
 		rb = GetComponent<Rigidbody>();
+		gameRounds = GetComponent<GameRounds>();
 	}
 
 	// Update is called once per frame
@@ -76,32 +81,32 @@ public class PlayerMovement : MonoBehaviour
 	}
 	public virtual void ThrowingGame()
 	{
-		if (Input.GetKeyDown(KeyCode.F))
-		{
-			ThrowPlayer(objectToThrow);
-		}
-		if (Input.GetKeyDown(KeyCode.J))
-		{
-			ThrowPlayer(objectToThrow);
-		}
+		
 	}
-	public void ThrowPlayer(GameObject throwingPlayer)
+	public void ThrowPlayer(GameObject throwingPlayer, TextMeshProUGUI distanceToObject, bool thrownObject)
 	{
-		if (objectThrown)
+		if (thrownObject)
 			return;
 
 		if (objectToThrow)
 		{
 			var otherPlayer = objectToThrow.GetComponent<Rigidbody>();
-			otherPlayer.AddForce(ThrowBar.powerMultiplier * throwForce * transform.forward);
-			objectThrown = true;
-			StartCoroutine(CalculateDistanceToObject());
+			otherPlayer.useGravity = true;
+			otherPlayer.AddForce(ThrowBar.powerMultiplier * throwForce * -transform.right);
+			thrownObject = true;
+			StartCoroutine(CalculateDistanceToObject(distanceToObject));
 		}
 	}
-	IEnumerator CalculateDistanceToObject()
+	IEnumerator CalculateDistanceToObject(TextMeshProUGUI objectDistance)
 	{
 		yield return new WaitForSeconds(2f);
 		float distance = Vector3.Distance(objectToThrow.transform.position, transform.position);
-		Debug.Log("Distance to object: " + distance + " meters");
+		//Debug.Log("Distance to object: " + distance + " meters");
+		objectDistance.text = $"{distance} m";
+		if (PlayerOne.objectThrown == true && PlayerTwo.objectThrown == true)
+		{
+			gameRounds.playerRounds = 2;
+			gameRounds.RoundStart(gameRounds.playerRounds);
+		}
 	}
 }
