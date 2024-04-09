@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public GameObject objectToThrow;
 	public float throwForce = 500f;
-	//bool objectThrown = false;
+	public bool _objectThrown = false;
 
 	GameRounds gameRounds;
 	
@@ -83,9 +83,9 @@ public class PlayerMovement : MonoBehaviour
 	{
 		
 	}
-	public void ThrowPlayer(GameObject throwingPlayer, TextMeshProUGUI distanceToObject, bool thrownObject)
+	public void ThrowPlayer(GameObject throwingPlayer, TextMeshProUGUI distanceToObject)
 	{
-		if (thrownObject)
+		if (_objectThrown)
 			return;
 
 		if (objectToThrow)
@@ -93,7 +93,8 @@ public class PlayerMovement : MonoBehaviour
 			var otherPlayer = objectToThrow.GetComponent<Rigidbody>();
 			otherPlayer.useGravity = true;
 			otherPlayer.AddForce(ThrowBar.powerMultiplier * throwForce * -transform.right);
-			thrownObject = true;
+			_objectThrown = true;
+			//_objectThrown = thrownObject;
 			StartCoroutine(CalculateDistanceToObject(distanceToObject));
 		}
 	}

@@ -6,7 +6,6 @@ using TMPro;
 public class PlayerFour : PlayerMovement
 {
 	public TextMeshProUGUI distanceThrown;
-	public bool objectThrown = false;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -30,7 +29,7 @@ public class PlayerFour : PlayerMovement
 		base.ThrowingGame();
 		if (Input.GetKeyDown(KeyCode.J))
 		{
-			ThrowPlayer(objectToThrow, distanceThrown, objectThrown);
+			ThrowPlayer(objectToThrow, distanceThrown);
 		}
 	}
 }

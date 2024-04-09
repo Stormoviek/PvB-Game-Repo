@@ -14,6 +14,8 @@ public class GameRounds : MonoBehaviour
     public PlayerOne _playerOne;
     public PlayerTwo _playerTwo;
     public PlayerMovement _playerMovement;
+    public GameObject myPlayerOne;
+    public GameObject myPlayerTwo;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class GameRounds : MonoBehaviour
         //    playerRounds = 2;
         //    RoundStart(playerRounds);
         //}
+        
     }
     public void RoundStart(int round)
     {
@@ -50,7 +53,10 @@ public class GameRounds : MonoBehaviour
             //{
             //    playerRounds++;
             //}
-            
+            if (_playerMovement._objectThrown == true)
+            {
+                playerRounds = 2;
+            }
 		}
 		if (playerRounds == 2)
 		{
