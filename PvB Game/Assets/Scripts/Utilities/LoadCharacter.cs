@@ -17,6 +17,7 @@ public class LoadCharacter : MonoBehaviour
             GameObject clone = Instantiate(prefab, spawnPoints[i].position, Quaternion.identity);
 
             clone.name = "player" + i;
+            clone.transform.parent = spawnPoints[i];
         }
     }
 }

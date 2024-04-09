@@ -245,10 +245,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefabs:
-  - {fileID: 2349147062485388232, guid: dfe8116920cd92a4fbb101890b014323, type: 3}
-  - {fileID: 1514038008996046489, guid: 9f7bd27335a8fc841b36bb9565897bc3, type: 3}
-  - {fileID: 5219474937192326886, guid: f99d93aae25e04b409d956f66dbc4e75, type: 3}
-  - {fileID: 3305616157157524051, guid: ae31843d8998ac8469cd89b7b6e585b6, type: 3}
+  - {fileID: 6919933183510721284, guid: 92f864ffcf54c4e48a5217134756eb71, type: 3}
+  - {fileID: 8816928225403800582, guid: df6e698e758c46d4d9691785a96929dd, type: 3}
+  - {fileID: 5344529551838101024, guid: 95fce580bf0c54e45bbc11ff388949ed, type: 3}
+  - {fileID: 2087888546159068908, guid: 1867b4369d83fd740bd712ed9e765017, type: 3}
   spawnPoints:
   - {fileID: 2074758618}
   - {fileID: 1605313290}
