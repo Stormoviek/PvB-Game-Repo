@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerFour : PlayerMovement
 {
 	public TextMeshProUGUI distanceThrown;
-	public static bool objectThrown = false;
+	public bool objectThrown = false;
 	// Start is called before the first frame update
 	void Start()
 	{

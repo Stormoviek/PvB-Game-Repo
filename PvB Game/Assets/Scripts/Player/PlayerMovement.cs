@@ -103,10 +103,10 @@ public class PlayerMovement : MonoBehaviour
 		float distance = Vector3.Distance(objectToThrow.transform.position, transform.position);
 		//Debug.Log("Distance to object: " + distance + " meters");
 		objectDistance.text = $"{distance} m";
-		if (PlayerOne.objectThrown == true && PlayerTwo.objectThrown == true)
-		{
-			gameRounds.playerRounds = 2;
-			gameRounds.RoundStart(gameRounds.playerRounds);
-		}
+		//if (PlayerOne.objectThrown == true && PlayerTwo.objectThrown == true)
+		//{
+		//	gameRounds.playerRounds = 2;
+		//	gameRounds.RoundStart(gameRounds.playerRounds);
+		//}
 	}
 }

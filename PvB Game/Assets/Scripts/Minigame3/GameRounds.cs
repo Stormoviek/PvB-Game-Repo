@@ -21,6 +21,7 @@ public class GameRounds : MonoBehaviour
         RoundStart(playerRounds);
         //_playerOne = GetComponent<PlayerOne>();
         //_playerTwo = GetComponent<PlayerTwo>();
+        _playerMovement = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -28,7 +29,8 @@ public class GameRounds : MonoBehaviour
     {
         //if (_playerOne.objectThrown == true && _playerTwo.objectThrown == true)
         //{
-        //    playerRounds++;
+        //    playerRounds = 2;
+        //    RoundStart(playerRounds);
         //}
     }
     public void RoundStart(int round)
