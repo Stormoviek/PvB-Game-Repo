@@ -8,6 +8,8 @@ public class LoadCharacter : MonoBehaviour
     public GameObject[] characterPrefabs;
     public Transform[] spawnPoints;
 
+    public bool changeScale = false;
+
     void Start()
     {
         for (int i = 0; i < spawnPoints.Length; i++)
@@ -18,6 +20,11 @@ public class LoadCharacter : MonoBehaviour
 
             clone.name = "player" + i;
             clone.transform.parent = spawnPoints[i];
+            
+            if (changeScale = true)
+            {
+                clone.transform.localScale += new Vector3(-0.5f, -0.5f, -0.5f);
+            }
         }
     }
 }

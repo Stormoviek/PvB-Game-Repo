@@ -41,10 +41,12 @@ public class GatherMinigameMovement : MonoBehaviour
         if (Input.GetKey(GetKeyCodeWithPrefix(leftKey, playerIndex)))
         {
             movement += Vector3.back;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         if (Input.GetKey(GetKeyCodeWithPrefix(rightKey, playerIndex)))
         {
             movement += Vector3.forward;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         if (movement != Vector3.zero)
