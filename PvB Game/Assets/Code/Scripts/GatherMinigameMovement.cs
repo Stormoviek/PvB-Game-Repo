@@ -19,16 +19,19 @@ public class GatherMinigameMovement : MonoBehaviour
 
     private Rigidbody rb;
 
+    private ItemCollectionManager itemCollectionManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        itemCollectionManager = FindObjectOfType<ItemCollectionManager>();
     }
 
     void Update()
     {
         string playerNumber = gameObject.name.Replace("Player", "");
 
-        int playerIndex = 0;
+        int playerIndex = int.Parse(playerNumber);
 
         Vector3 movement = Vector3.zero;
 
@@ -67,7 +70,9 @@ public class GatherMinigameMovement : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             Destroy(other.gameObject);
-            Debug.Log("Item collected!");
+            string playerNumber = gameObject.name.Replace("Player", "");
+            string playerName = "Player" + playerNumber;
+            itemCollectionManager.CollectItem(playerName);
         }
     }
 }
