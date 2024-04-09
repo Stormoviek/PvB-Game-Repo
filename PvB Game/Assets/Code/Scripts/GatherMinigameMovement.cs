@@ -31,7 +31,7 @@ public class GatherMinigameMovement : MonoBehaviour
     {
         string playerNumber = gameObject.name.Replace("Player", "");
 
-        int playerIndex = int.Parse(playerNumber);
+        int playerIndex = 0;
 
         Vector3 movement = Vector3.zero;
 
