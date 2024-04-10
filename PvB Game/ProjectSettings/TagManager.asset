@@ -5,18 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - FinishLine
-  - Item
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - Forest
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player One
+  - Player Two
+  - Player Three
+  - Player Four
   - 
   - 
   - 
@@ -40,9 +39,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2739869031
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

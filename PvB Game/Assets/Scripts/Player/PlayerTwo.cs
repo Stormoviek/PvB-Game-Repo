@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerTwo : PlayerMovement
 {
+	public TextMeshProUGUI distanceThrown;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -25,9 +27,9 @@ public class PlayerTwo : PlayerMovement
 	public override void ThrowingGame()
 	{
 		base.ThrowingGame();
-		if (Input.GetKeyDown(KeyCode.J))
+		if (Input.GetKeyDown(KeyCode.G))
 		{
-			ThrowPlayer(objectToThrow);
+			ThrowPlayer(objectToThrow, distanceThrown);
 		}
 	}
 }
