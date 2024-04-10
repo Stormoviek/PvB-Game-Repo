@@ -6,27 +6,37 @@ using TMPro;
 
 public class Finish : MonoBehaviour
 {
-	public PlayerMovement playerMovement;
-	public List<int> playerFinish;
-	public List<TextMeshProUGUI> playerLabels;
-	public int index;
-	// Start is called before the first frame update
-	void Start()
-	{
-		playerFinish = new();
-	}
-	private void OnTriggerEnter(Collider other)
-	{
-		var player = other.GetComponent<PlayerMovement>();
-		UpdateScoreboard(player.playerIndex);
-	}
-	void UpdateScoreboard(int playerIndex)
-	{
-		if (playerFinish.Contains(playerIndex))
-			return;
+    public MainScoreManager scoreManager;
+    public List<PlayerMovement> players;
+    public List<TextMeshProUGUI> playerLabels;
 
-		playerFinish.Add(playerIndex);
-		playerLabels[index].text = $"Speler {playerIndex + 1}";
-		index++;
-	}
+    void OnTriggerEnter(Collider other)
+    {
+        var player = other.GetComponent<PlayerMovement>();
+        if (player != null && !players.Contains(player))
+        {
+            players.Add(player);
+            UpdateScoreboard();
+        }
+    }
+
+    void UpdateScoreboard()
+    {
+        players.Sort((a, b) => players.IndexOf(a).CompareTo(players.IndexOf(b)));
+
+        List<string> sortedPlayerPlacements = new List<string>();
+
+        foreach (var player in players)
+        {
+            sortedPlayerPlacements.Add("Player" + player.playerIndex);
+        }
+
+        MainScoreManager scoreManager = FindObjectOfType<MainScoreManager>();
+        scoreManager.UpdatePlayerScore(sortedPlayerPlacements.ToArray());
+
+        for (int i = 0; i < playerLabels.Count && i < sortedPlayerPlacements.Count; i++)
+        {
+            playerLabels[i].text = sortedPlayerPlacements[i];
+        }
+    }
 }
