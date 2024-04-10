@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Storm/Main Menu.unity
+    guid: 43158503be2cfab478187aecdd771559
+  - enabled: 1
+    path: Assets/Scenes/Storm/Test/Test.unity
+    guid: 347a6ccb53883374088cb1ef7be56ab9
+  - enabled: 1
+    path: Assets/Scenes/Storm/Test/Test1.unity
+    guid: 9ac06f07e7ec7f442b472783f0ce3279
+  - enabled: 1
+    path: Assets/Scenes/Storm/Test/Test2.unity
+    guid: 609c08aa57a452d4286e4834a619cb01
+  - enabled: 1
+    path: Assets/Scenes/Storm/Test/Test3.unity
+    guid: cb510249b9d76d046ae8a0099c13d0d0
+  - enabled: 1
+    path: Assets/Scenes/Storm/Test/Test4.unity
+    guid: 6ccb0c1e535e9814a9f0fc2940d761b7
+  - enabled: 1
+    path: Assets/Scenes/Storm/Test/Test5.unity
+    guid: 344fc6e23045a684a8b8e59787c649ce
   m_configObjects: {}
