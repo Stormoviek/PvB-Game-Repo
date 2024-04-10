@@ -158,6 +158,7 @@ MonoBehaviour:
   - {fileID: 1983179756}
   - {fileID: 533284712}
   selectedCharacters: 00000000000000000000000000000000
+  chosenPlayers: {fileID: 1587021790}
 --- !u!4 &68911279
 Transform:
   m_ObjectHideFlags: 0

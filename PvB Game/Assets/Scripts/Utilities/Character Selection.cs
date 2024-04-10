@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,8 @@ public class CharacterSelection : MonoBehaviour
 
     private int currentPlayer = 0;
     private int playersSelected = 1;
+
+    public TextMeshProUGUI chosenPlayers;
 
     public void NextCharacter()
     {
