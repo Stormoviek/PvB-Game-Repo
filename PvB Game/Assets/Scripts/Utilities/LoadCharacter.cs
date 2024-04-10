@@ -26,7 +26,7 @@ public class LoadCharacter : MonoBehaviour
 
             clone.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-            if (changeScale = true)
+            if (changeScale == true)
             {
                 clone.transform.localScale += new Vector3(-0.5f, -0.5f, -0.5f);
             }

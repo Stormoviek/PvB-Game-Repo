@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,9 @@ public class CharacterSelection : MonoBehaviour
 
     private int currentPlayer = 0;
     private int playersSelected = 1;
+
+    public TextMeshProUGUI[] chosenPlayers;
+    string[] playerStrings = { "Player One: ", "Player Two: ", "Player Three: ", "Player Four: " };
 
     public void NextCharacter()
     {
@@ -36,6 +40,12 @@ public class CharacterSelection : MonoBehaviour
             return;
 
         characters[selectedCharacters[currentPlayer]].SetActive(false);
+
+        //playerStrings[playersSelected] = chosenPlayers.ToString(playerStrings[] + characters[]);
+        //for (int i = 0; i < chosenPlayers.Length; i++)
+        //{
+        //    chosenPlayers[i].ToString(playerStrings[i] + characters[i].name + "!");
+        //}
 
         currentPlayer = (currentPlayer + 1) % selectedCharacters.Length;
         playersSelected++;
