@@ -11877,7 +11877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerLabel: {fileID: 1970566264}
-  timeRemaining: 60
+  timeRemaining: 20
   timeOverPanel: {fileID: 0}
 --- !u!1001 &968543895
 PrefabInstance:

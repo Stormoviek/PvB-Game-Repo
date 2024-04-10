@@ -11,7 +11,7 @@ public class Card : MonoBehaviour
     {
         if (!isPulled)
         {
-            int randomIndex = Random.Range(1, 1);
+            int randomIndex = Random.Range(1, 4);
             string sceneToLoad = "Minigame" + randomIndex;
             SceneManager.LoadScene(sceneToLoad);
             isPulled = true;

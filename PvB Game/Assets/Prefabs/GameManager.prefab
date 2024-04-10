@@ -57,3 +57,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2377cb46b881aae4eb7cdd9d399da5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPlacements: []
+  playerScoreDisplays:
+  - playerName: Player0
+    score: 0
+  - playerName: Player1
+    score: 0
+  - playerName: Player2
+    score: 0
+  - playerName: Player3
+    score: 0

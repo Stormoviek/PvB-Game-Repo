@@ -11,8 +11,11 @@ public class DiceCheckZoneScript : MonoBehaviour
 
     Vector3 diceVelocity;
 
+    public GameObject cards;
+
     void Awake()
     {
+        cards.SetActive(false);
         diceScript = FindObjectOfType<DiceScript>();
     }
 
@@ -42,6 +45,8 @@ public class DiceCheckZoneScript : MonoBehaviour
             DiceNumberTextScript.text.text = highestPlayer + " had the highest roll with " + highestRoll;
             yield return new WaitForSeconds(2f);
             DiceNumberTextScript.text.text = "";
+
+            cards.SetActive(true);
         }
     }
 

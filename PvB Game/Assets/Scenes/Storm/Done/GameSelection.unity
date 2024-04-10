@@ -940,6 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollCount: 0
+  cards: {fileID: 1677804554}
 --- !u!65 &1494300689
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -6,6 +6,16 @@ public class MainScoreManager : MonoBehaviour
     public Dictionary<string, int> playerScores = new Dictionary<string, int>();
     public string[] playerPlacements;
 
+    [SerializeField]
+    private List<PlayerScoreDisplay> playerScoreDisplays = new List<PlayerScoreDisplay>();
+
+    [System.Serializable]
+    public class PlayerScoreDisplay
+    {
+        public string playerName;
+        public int score;
+    }
+
     private void InitializePlayerScores()
     {
         playerScores.Clear();
@@ -30,6 +40,8 @@ public class MainScoreManager : MonoBehaviour
                 int score = 4 - i;
                 playerScores[playerName] += score;
             }
+
+            UpdatePlayerScoreDisplay();
         }
     }
 
@@ -48,5 +60,13 @@ public class MainScoreManager : MonoBehaviour
     void Start()
     {
         InitializePlayerScores();
+    }
+
+    private void UpdatePlayerScoreDisplay()
+    {
+        foreach (var display in playerScoreDisplays)
+        {
+            display.score = GetPlayerScore(display.playerName);
+        }
     }
 }

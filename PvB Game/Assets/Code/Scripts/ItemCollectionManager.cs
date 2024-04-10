@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
+using UnityEngine.SceneManagement;
 
 public class ItemCollectionManager : MonoBehaviour
 {
     private Dictionary<string, int> itemsCollectedByPlayer = new Dictionary<string, int>();
     private MainScoreManager scoreManager;
-    private int countdownTime = 60;
-
-    private void Awake()
-    {
-        scoreManager = FindObjectOfType<MainScoreManager>();
-    }
+    private int countdownTime = 20;
 
     private void InitializeItemCounts()
     {
@@ -53,6 +49,10 @@ public class ItemCollectionManager : MonoBehaviour
 
     public void EndGame(string[] playerPlacement)
     {
+        scoreManager = FindObjectOfType<MainScoreManager>();
+
+        SceneManager.LoadScene(2);
+
         if (scoreManager != null)
         {
             scoreManager.UpdatePlayerScore(playerPlacement);
