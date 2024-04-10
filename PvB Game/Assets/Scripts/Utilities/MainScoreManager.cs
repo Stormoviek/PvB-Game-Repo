@@ -95,11 +95,13 @@ public class MainScoreManager : MonoBehaviour
 
     public void GameCount()
     {
+        count++;
+
         if (count == 3)
         {
             SceneManager.LoadScene(6);
         }
-        else ()
+        else
         {
             SceneManager.LoadScene(2);
         }

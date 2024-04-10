@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
 	public float timeRemaining = 60f;
 	bool timerIsRunning = false;
-	public GameObject timeOverPanel;
+	//public GameObject timeOverPanel;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -33,7 +33,6 @@ public class Timer : MonoBehaviour
 				timerIsRunning = false;
                 MainScoreManager scoreManager = FindObjectOfType<MainScoreManager>();
                 scoreManager.GameCount();
-                SceneManager.LoadScene(2);
                 //timeOverPanel.SetActive(true);
                 //timeOverLabel.enabled = true;
                 DisplayTime(timeRemaining);

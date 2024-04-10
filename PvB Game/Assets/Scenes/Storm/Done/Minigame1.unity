@@ -3689,7 +3689,6 @@ GameObject:
   m_Component:
   - component: {fileID: 812547973}
   - component: {fileID: 812547972}
-  - component: {fileID: 812547974}
   m_Layer: 0
   m_Name: ItemCollectionManager
   m_TagString: Untagged
@@ -3724,21 +3723,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &812547974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812547971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a159f066715393345b74981cd9d10d53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerLabel: {fileID: 0}
-  timeRemaining: 20
-  timeOverPanel: {fileID: 0}
 --- !u!1 &814188410
 GameObject:
   m_ObjectHideFlags: 0
@@ -6502,6 +6486,10 @@ PrefabInstance:
     - target: {fileID: 7013928929377892282, guid: ff1c07a1af95ede4ca13446c9c8c0b6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134063510254643531, guid: ff1c07a1af95ede4ca13446c9c8c0b6d, type: 3}
+      propertyPath: count
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7942298692408743910, guid: ff1c07a1af95ede4ca13446c9c8c0b6d, type: 3}
       propertyPath: m_Name
@@ -10041,7 +10029,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerLabel: {fileID: 1282279833}
   timeRemaining: 20
-  timeOverPanel: {fileID: 0}
 --- !u!1 &1983700575
 GameObject:
   m_ObjectHideFlags: 0
