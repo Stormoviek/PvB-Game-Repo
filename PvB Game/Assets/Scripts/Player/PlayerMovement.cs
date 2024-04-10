@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -92,22 +93,41 @@ public class PlayerMovement : MonoBehaviour
 		{
 			var otherPlayer = objectToThrow.GetComponent<Rigidbody>();
 			otherPlayer.useGravity = true;
-			otherPlayer.AddForce(ThrowBar.powerMultiplier * throwForce * -transform.right);
+			otherPlayer.AddForce(ThrowBar.powerMultiplier * throwForce * transform.forward);
 			_objectThrown = true;
-			//_objectThrown = thrownObject;
+
 			StartCoroutine(CalculateDistanceToObject(distanceToObject));
 		}
 	}
-	IEnumerator CalculateDistanceToObject(TextMeshProUGUI objectDistance)
-	{
-		yield return new WaitForSeconds(2f);
-		float distance = Vector3.Distance(objectToThrow.transform.position, transform.position);
-		//Debug.Log("Distance to object: " + distance + " meters");
-		objectDistance.text = $"{distance} m";
-		//if (PlayerOne.objectThrown == true && PlayerTwo.objectThrown == true)
-		//{
-		//	gameRounds.playerRounds = 2;
-		//	gameRounds.RoundStart(gameRounds.playerRounds);
-		//}
-	}
+    IEnumerator CalculateDistanceToObject(TextMeshProUGUI objectDistance)
+    {
+        yield return new WaitForSeconds(2f);
+        float distance = Vector3.Distance(objectToThrow.transform.position, transform.position);
+        objectDistance.text = $"{distance} m";
+
+        Dictionary<int, float> playerDistances = new Dictionary<int, float>();
+        playerDistances.Add(playerIndex, distance);
+
+        PlayerMovement[] allPlayerMovements = FindObjectsOfType<PlayerMovement>();
+
+        foreach (PlayerMovement playerMovement in allPlayerMovements)
+        {
+            if (playerMovement != this)
+            {
+                float otherDistance = Vector3.Distance(objectToThrow.transform.position, playerMovement.transform.position);
+                playerDistances.Add(playerMovement.playerIndex, otherDistance);
+            }
+        }
+
+        var sortedPlayerDistances = playerDistances.OrderBy(pair => pair.Value);
+
+        string[] sortedPlayerPlacements = sortedPlayerDistances.Select(pair => "Player" + pair.Key).ToArray();
+
+        MainScoreManager scoreManager = FindObjectOfType<MainScoreManager>();
+        if (scoreManager != null)
+        {
+            scoreManager.UpdatePlayerScore(sortedPlayerPlacements);
+        }
+    }
+
 }

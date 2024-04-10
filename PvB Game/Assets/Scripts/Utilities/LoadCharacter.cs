@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Collections.Specialized;
 
 public class LoadCharacter : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class LoadCharacter : MonoBehaviour
             if (changeScale = true)
             {
                 clone.transform.localScale += new Vector3(-0.5f, -0.5f, -0.5f);
+            }
+            else
+            {
+                clone.transform.localScale = new Vector3(1f, 1f, 1f);
             }
         }
     }

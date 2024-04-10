@@ -9225,6 +9225,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2807449429036539767, guid: f0c16f0ea935ea64297ca1d4d55d9746, type: 3}
   m_PrefabInstance: {fileID: 718847373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &721511439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721511441}
+  - component: {fileID: 721511440}
+  m_Layer: 0
+  m_Name: LoadCharacter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &721511440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721511439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41e56b8e53ca4143979430e7374e257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefabs:
+  - {fileID: 6919933183510721284, guid: 92f864ffcf54c4e48a5217134756eb71, type: 3}
+  - {fileID: 8816928225403800582, guid: df6e698e758c46d4d9691785a96929dd, type: 3}
+  - {fileID: 5344529551838101024, guid: 95fce580bf0c54e45bbc11ff388949ed, type: 3}
+  - {fileID: 2087888546159068908, guid: 1867b4369d83fd740bd712ed9e765017, type: 3}
+  spawnPoints:
+  - {fileID: 1506600230}
+  - {fileID: 1165550391}
+  - {fileID: 1452113321}
+  - {fileID: 1641688094}
+  changeScale: 0
+--- !u!4 &721511441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721511439}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1101, y: 257, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &724923409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11947,7 +12002,7 @@ GameObject:
   - component: {fileID: 965726983}
   - component: {fileID: 965726984}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: MinigameTwoGameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14722,7 +14777,7 @@ GameObject:
   - component: {fileID: 1165550389}
   - component: {fileID: 1165550388}
   m_Layer: 0
-  m_Name: PlayerTwo
+  m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14797,6 +14852,8 @@ MonoBehaviour:
   playerVelocity: {x: 0, y: 0, z: 0}
   objectToThrow: {fileID: 0}
   throwForce: 500
+  _objectThrown: 0
+  distanceThrown: {fileID: 0}
 --- !u!4 &1165550391
 Transform:
   m_ObjectHideFlags: 0
@@ -17985,7 +18042,7 @@ GameObject:
   - component: {fileID: 1452113319}
   - component: {fileID: 1452113318}
   m_Layer: 0
-  m_Name: PlayerThree
+  m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18060,6 +18117,8 @@ MonoBehaviour:
   playerVelocity: {x: 0, y: 0, z: 0}
   objectToThrow: {fileID: 0}
   throwForce: 500
+  _objectThrown: 0
+  distanceThrown: {fileID: 0}
 --- !u!4 &1452113321
 Transform:
   m_ObjectHideFlags: 0
@@ -18746,7 +18805,7 @@ GameObject:
   - component: {fileID: 1506600228}
   - component: {fileID: 1506600227}
   m_Layer: 0
-  m_Name: PlayerOne
+  m_Name: Player0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18821,6 +18880,8 @@ MonoBehaviour:
   playerVelocity: {x: 0, y: 0, z: 0}
   objectToThrow: {fileID: 0}
   throwForce: 500
+  _objectThrown: 0
+  distanceThrown: {fileID: 0}
 --- !u!4 &1506600230
 Transform:
   m_ObjectHideFlags: 0
@@ -20668,7 +20729,7 @@ GameObject:
   - component: {fileID: 1641688092}
   - component: {fileID: 1641688091}
   m_Layer: 0
-  m_Name: PlayerFour
+  m_Name: Player3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20743,6 +20804,8 @@ MonoBehaviour:
   playerVelocity: {x: 0, y: 0, z: 0}
   objectToThrow: {fileID: 0}
   throwForce: 500
+  _objectThrown: 0
+  distanceThrown: {fileID: 0}
 --- !u!4 &1641688094
 Transform:
   m_ObjectHideFlags: 0
@@ -20820,7 +20883,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 31.29057
+  field of view: 31.547886
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -27550,3 +27613,4 @@ SceneRoots:
   - {fileID: 903272432}
   - {fileID: 876641810}
   - {fileID: 1188578738}
+  - {fileID: 721511441}
