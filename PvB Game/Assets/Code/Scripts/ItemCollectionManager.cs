@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
@@ -6,6 +7,13 @@ using Debug = UnityEngine.Debug;
 public class ItemCollectionManager : MonoBehaviour
 {
     private Dictionary<string, int> itemsCollectedByPlayer = new Dictionary<string, int>();
+    private MainScoreManager scoreManager;
+    private int countdownTime = 60;
+
+    private void Awake()
+    {
+        scoreManager = FindObjectOfType<MainScoreManager>();
+    }
 
     private void InitializeItemCounts()
     {
@@ -43,8 +51,39 @@ public class ItemCollectionManager : MonoBehaviour
         }
     }
 
+    public void EndGame(string[] playerPlacement)
+    {
+        if (scoreManager != null)
+        {
+            scoreManager.UpdatePlayerScore(playerPlacement);
+        }
+        else
+        {
+            Debug.LogError("MainScoreManager not found!");
+        }
+    }
+
     private void Start()
     {
         InitializeItemCounts();
+        StartCoroutine(StartCountdown());
     }
+
+    private IEnumerator StartCountdown()
+    {
+        while (countdownTime > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            countdownTime--;
+            Debug.Log("Time left: " + countdownTime);
+        }
+
+        List<string> playerNames = new List<string>(itemsCollectedByPlayer.Keys);
+        playerNames.Sort((a, b) => GetItemCount(b).CompareTo(GetItemCount(a)));
+
+        string[] playerPlacement = playerNames.ToArray();
+
+        EndGame(playerPlacement);
+    }
+
 }
