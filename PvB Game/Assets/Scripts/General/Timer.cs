@@ -31,6 +31,8 @@ public class Timer : MonoBehaviour
 				Debug.Log("Time has ran out!");
 				timeRemaining = 0;
 				timerIsRunning = false;
+                MainScoreManager scoreManager = FindObjectOfType<MainScoreManager>();
+                scoreManager.GameCount();
                 SceneManager.LoadScene(2);
                 //timeOverPanel.SetActive(true);
                 //timeOverLabel.enabled = true;

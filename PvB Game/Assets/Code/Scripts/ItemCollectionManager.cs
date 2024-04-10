@@ -9,7 +9,7 @@ public class ItemCollectionManager : MonoBehaviour
 {
     private Dictionary<string, int> itemsCollectedByPlayer = new Dictionary<string, int>();
     private MainScoreManager scoreManager;
-    private int countdownTime = 20;
+    private int countdownTime = 19;
 
     private void InitializeItemCounts()
     {
@@ -51,7 +51,6 @@ public class ItemCollectionManager : MonoBehaviour
     {
         scoreManager = FindObjectOfType<MainScoreManager>();
 
-        SceneManager.LoadScene(2);
 
         if (scoreManager != null)
         {
