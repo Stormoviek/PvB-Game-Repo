@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -30,9 +31,10 @@ public class Timer : MonoBehaviour
 				Debug.Log("Time has ran out!");
 				timeRemaining = 0;
 				timerIsRunning = false;
-				timeOverPanel.SetActive(true);
-				//timeOverLabel.enabled = true;
-				DisplayTime(timeRemaining);
+                SceneManager.LoadScene(2);
+                //timeOverPanel.SetActive(true);
+                //timeOverLabel.enabled = true;
+                DisplayTime(timeRemaining);
 			}
 		}
 	}
