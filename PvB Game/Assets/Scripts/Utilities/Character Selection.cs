@@ -44,7 +44,7 @@ public class CharacterSelection : MonoBehaviour
         //playerStrings[playersSelected] = chosenPlayers.ToString(playerStrings[] + characters[]);
         //for (int i = 0; i < chosenPlayers.Length; i++)
         //{
-        //    chosenPlayers[i].ToString(playerStrings[i] + characters[i].name + "!");
+        //    chosenPlayers[i].ToString(playerStrings[i] + characters[i].name);
         //}
 
         currentPlayer = (currentPlayer + 1) % selectedCharacters.Length;
