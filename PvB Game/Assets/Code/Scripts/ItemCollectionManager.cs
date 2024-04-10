@@ -51,7 +51,7 @@ public class ItemCollectionManager : MonoBehaviour
     {
         scoreManager = FindObjectOfType<MainScoreManager>();
 
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
 
         if (scoreManager != null)
         {
