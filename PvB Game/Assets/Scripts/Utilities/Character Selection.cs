@@ -8,14 +8,18 @@ using UnityEngine.SceneManagement;
 public class CharacterSelection : MonoBehaviour
 {
     public GameObject[] characters;
+
     public int[] selectedCharacters;
 
     private int currentPlayer = 0;
+
     private int playersSelected = 1;
 
     public TextMeshProUGUI[] chosenPlayers;
+
     string[] playerStrings = { "Player One: ", "Player Two: ", "Player Three: ", "Player Four: " };
 
+    // volgende character
     public void NextCharacter()
     {
         characters[selectedCharacters[currentPlayer]].SetActive(false);
@@ -23,6 +27,7 @@ public class CharacterSelection : MonoBehaviour
         characters[selectedCharacters[currentPlayer]].SetActive(true);
     }
 
+    // vorige character
     public void PreviousCharacter()
     {
         characters[selectedCharacters[currentPlayer]].SetActive(false);
@@ -34,18 +39,13 @@ public class CharacterSelection : MonoBehaviour
         characters[selectedCharacters[currentPlayer]].SetActive(true);
     }
 
+    // volgende speler
     public void NextPlayer()
     {
         if (playersSelected >= selectedCharacters.Length)
             return;
 
         characters[selectedCharacters[currentPlayer]].SetActive(false);
-
-        //playerStrings[playersSelected] = chosenPlayers.ToString(playerStrings[] + characters[]);
-        //for (int i = 0; i < chosenPlayers.Length; i++)
-        //{
-        //    chosenPlayers[i].ToString(playerStrings[i] + characters[i].name);
-        //}
 
         currentPlayer = (currentPlayer + 1) % selectedCharacters.Length;
         playersSelected++;
@@ -54,8 +54,10 @@ public class CharacterSelection : MonoBehaviour
         characters[selectedCharacters[currentPlayer]].SetActive(true);
     }
 
+    // start de game
     public void StartGame()
     {
+        // Check of alle spelers een character hebben gekozen
         if (playersSelected < selectedCharacters.Length)
         {
             NextPlayer();
@@ -66,6 +68,7 @@ public class CharacterSelection : MonoBehaviour
             SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
 
+        // Sla de characters op in de spelerprefs
         for (int i = 0; i < selectedCharacters.Length; i++)
         {
             PlayerPrefs.SetInt("selectedCharacter" + i, selectedCharacters[i]);
