@@ -11878,7 +11878,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerLabel: {fileID: 1970566264}
   timeRemaining: 20
-  timeOverPanel: {fileID: 0}
 --- !u!1001 &968543895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14541,7 +14540,7 @@ GameObject:
   - component: {fileID: 1165550388}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17805,7 +17804,7 @@ GameObject:
   - component: {fileID: 1452113318}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18567,7 +18566,7 @@ GameObject:
   - component: {fileID: 1506600227}
   m_Layer: 0
   m_Name: Player0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20547,7 +20546,7 @@ GameObject:
   - component: {fileID: 1641688091}
   m_Layer: 0
   m_Name: Player3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20699,7 +20698,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 30.554415
+  field of view: 30.507658
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
