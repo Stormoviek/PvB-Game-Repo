@@ -3791,7 +3791,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerLabel: {fileID: 860490397}
   timeRemaining: 25
-  timeOverPanel: {fileID: 1947106465}
 --- !u!114 &316730720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8327,7 +8326,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.75
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &791935434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13003,7 +13002,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.75
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &1240877305
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17939,7 +17938,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.75
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &1816064864
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19404,7 +19403,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.75
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &1928192243
 Rigidbody:
   m_ObjectHideFlags: 0
