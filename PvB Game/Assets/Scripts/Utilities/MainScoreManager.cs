@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MainScoreManager : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class MainScoreManager : MonoBehaviour
     [SerializeField]
     private List<PlayerScoreDisplay> playerScoreDisplays = new List<PlayerScoreDisplay>();
 
+    [SerializeField]
+    private GameObject scoreLeaderboard;
+
     [System.Serializable]
     public class PlayerScoreDisplay
     {
@@ -16,7 +21,9 @@ public class MainScoreManager : MonoBehaviour
         public int score;
     }
 
-    private void InitializePlayerScores()
+    public int count = 0;
+
+    public void InitializePlayerScores()
     {
         playerScores.Clear();
 
@@ -62,11 +69,41 @@ public class MainScoreManager : MonoBehaviour
         InitializePlayerScores();
     }
 
-    private void UpdatePlayerScoreDisplay()
+    public void UpdatePlayerScoreDisplay()
     {
+        Debug.Log("Updating player score!");
+        playerScoreDisplays.Sort((a, b) => playerScores[b.playerName].CompareTo(playerScores[a.playerName]));
+
         foreach (var display in playerScoreDisplays)
         {
             display.score = GetPlayerScore(display.playerName);
+        }
+
+        scoreLeaderboard = GameObject.Find("ScoreLeaderboard");
+
+        if (scoreLeaderboard != null)
+        {
+            TextMeshProUGUI[] texts = scoreLeaderboard.GetComponentsInChildren<TextMeshProUGUI>();
+
+            for (int i = 0; i < texts.Length && i < playerScoreDisplays.Count; i++)
+            {
+                Debug.Log("Writing scores!");
+                texts[i].text = $"{playerScoreDisplays[i].playerName}: {playerScoreDisplays[i].score}";
+            }
+        }
+    }
+
+    public void GameCount()
+    {
+        count++;
+
+        if (count == 3)
+        {
+            SceneManager.LoadScene(6);
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }

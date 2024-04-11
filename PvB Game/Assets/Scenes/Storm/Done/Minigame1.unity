@@ -9624,6 +9624,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7134063510254643531, guid: ff1c07a1af95ede4ca13446c9c8c0b6d, type: 3}
+      propertyPath: count
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7942298692408743910, guid: ff1c07a1af95ede4ca13446c9c8c0b6d, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -14027,7 +14031,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerLabel: {fileID: 1282279833}
   timeRemaining: 20
-  timeOverPanel: {fileID: 0}
 --- !u!1 &1983700575
 GameObject:
   m_ObjectHideFlags: 0
