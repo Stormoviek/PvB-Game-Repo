@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading;
 
 public class Finish : MonoBehaviour
 {
     public MainScoreManager scoreManager;
     public List<PlayerMovement> players;
     public List<TextMeshProUGUI> playerLabels;
+
+    int count;
 
     void OnTriggerEnter(Collider other)
     {
@@ -22,6 +25,8 @@ public class Finish : MonoBehaviour
 
     void UpdateScoreboard()
     {
+        count++;
+
         players.Sort((a, b) => players.IndexOf(a).CompareTo(players.IndexOf(b)));
 
         List<string> sortedPlayerPlacements = new List<string>();
@@ -31,9 +36,14 @@ public class Finish : MonoBehaviour
             sortedPlayerPlacements.Add("Player" + player.playerIndex);
         }
 
-        MainScoreManager scoreManager = FindObjectOfType<MainScoreManager>();
-        scoreManager.UpdatePlayerScore(sortedPlayerPlacements.ToArray());
+        if (count == 4)
+        {
+            count = 0;
 
+            MainScoreManager scoreManager = FindObjectOfType<MainScoreManager>();
+            scoreManager.UpdatePlayerScore(sortedPlayerPlacements.ToArray());
+        }
+        
         for (int i = 0; i < playerLabels.Count && i < sortedPlayerPlacements.Count; i++)
         {
             playerLabels[i].text = sortedPlayerPlacements[i];
