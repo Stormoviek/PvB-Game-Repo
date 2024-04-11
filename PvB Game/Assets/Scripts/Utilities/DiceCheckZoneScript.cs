@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DiceCheckZoneScript : MonoBehaviour
 {
-    public static Dictionary<string, int> playerRolls = new Dictionary<string, int>();
+    public static Dictionary<string, int> playerRolls = new();
     public int rollCount = 0;
 
     DiceScript diceScript;
@@ -27,6 +27,11 @@ public class DiceCheckZoneScript : MonoBehaviour
     IEnumerator DisplayRollResult(string playerName)
     {
         DiceNumberTextScript.text.text = playerName + " rolled " + playerRolls[playerName].ToString();
+        //DiceNumberTextScript.playerCountList.text = playerName + " gooide " + playerRolls[playerName].ToString();
+        //DiceNumberTextScript.playerCountList.text = $"Player1 gooide {playerRolls[playerName]}" +
+        //    $"\nPlayer2 gooide {playerRolls[playerName]}" +
+        //    $"\nPlayer3 gooide {playerRolls[playerName]}" +
+        //    $"\nPlayer4 gooide {playerRolls[playerName]}";
         yield return new WaitForSeconds(2f);
 
         if (rollCount == 4)
