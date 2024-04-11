@@ -17,14 +17,11 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject objectToThrow;
 	public float throwForce = 500f;
 	public bool _objectThrown = false;
-
-	GameRounds gameRounds;
 	
 	// Start is called before the first frame update
 	void Start()
 	{
 		rb = GetComponent<Rigidbody>();
-		gameRounds = GetComponent<GameRounds>();
 	}
 
 	// Update is called once per frame
@@ -105,8 +102,10 @@ public class PlayerMovement : MonoBehaviour
         float distance = Vector3.Distance(objectToThrow.transform.position, transform.position);
         objectDistance.text = $"{distance} m";
 
-        Dictionary<int, float> playerDistances = new Dictionary<int, float>();
-        playerDistances.Add(playerIndex, distance);
+        Dictionary<int, float> playerDistances = new()
+		{
+			{ playerIndex, distance }
+		};
 
         PlayerMovement[] allPlayerMovements = FindObjectsOfType<PlayerMovement>();
 
